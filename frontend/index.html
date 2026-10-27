@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PressDesk | Newspaper Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2 class="logo">▤ PressDesk</h2>
+        <nav>
+            <a class="active" href="#">⌂ Dashboard</a>
+            <a href="#subscribers">♙ Subscribers</a>
+            <a href="#newspapers">▤ Newspapers</a>
+            <a href="#">♧ Deliveries</a>
+            <a href="#">▥ Reports</a>
+            <a href="#">⚙ Settings</a>
+        </nav>
+        <div class="sidebar-bottom">Delivering News,<br>Connecting People</div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">⌂ Dashboard / Subscribers</p>
+                <h1>Newspaper Management System</h1>
+                <p class="subtitle">Manage your newspaper subscriptions efficiently and easily.</p>
+            </div>
+            <div class="admin">● <span>Admin</span></div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span class="stat-icon blue">♙</span>
+                <div><p>Total Subscribers</p><h2 id="totalCount">0</h2></div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon green">✓</span>
+                <div><p>Active Subscriptions</p><h2 id="activeCount">0</h2></div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon orange">Ⅱ</span>
+                <div><p>Paused</p><h2 id="pausedCount">0</h2></div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon red">×</span>
+                <div><p>Cancelled</p><h2 id="cancelledCount">0</h2></div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <h2>＋ Add New Subscriber</h2>
+                    <p>Fill in the details below to add a new subscriber.</p>
+                </div>
+            </div>
+            <form id="subscriberForm" class="subscriber-form">
+                <input type="text" id="full_name" placeholder="Full Name" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <input type="text" id="address" placeholder="Address" required>
+                <button type="submit" class="primary-btn">＋ Add Subscriber</button>
+            </form>
+            <p id="message" class="list-message"></p>
+        </section>
+
+        <section class="panel subscriber-panel" id="subscribers">
+            <div class="panel-header">
+                <div>
+                    <h2>♙ Subscribers List</h2>
+                    <p>Manage your existing subscribers.</p>
+                </div>
+                <input type="search" id="searchInput" placeholder="Search subscribers...">
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Subscriber</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscriberList">
+                        <tr><td colspan="6">Loading subscribers...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="listMessage" class="list-message">Loading subscriber records...</p>
+        </section>
+
+        <section class="panel" id="newspapers">
+            <div class="panel-header">
+                <div>
+                    <h2>▤ Newspapers List</h2>
+                    <p>Manage available newspapers and monthly prices.</p>
+                </div>
+            </div>
+
+            <form id="publicationForm" class="subscriber-form">
+                <input type="text" id="publication_name" placeholder="Newspaper Name" required>
+                <input type="number" id="monthly_price" placeholder="Monthly Price (₹)" min="1" step="0.01" required>
+                <button type="submit" class="primary-btn">＋ Add Newspaper</button>
+            </form>
+
+            <p id="publicationMessage" class="list-message"></p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+<th>Newspaper Name</th>
+<th>Monthly Price</th>
+<th>Status</th>
+<th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="publicationList">
+                        <tr><td colspan="5">Loading newspapers...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>© 2026 PressDesk · Newspaper Management System</footer>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
